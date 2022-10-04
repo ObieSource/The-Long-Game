@@ -1,0 +1,4 @@
+[submodule "ikes-sprites\\"]
+	path = ikes-sprites\\
+	url = https://github.com/iosenberg/ikes-sprites.git
+	branch = ikes-sprites
