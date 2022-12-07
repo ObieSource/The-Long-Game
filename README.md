@@ -1,4 +1,4 @@
-# Concept Document for [REDACTED]
+# Concept Document for The Long Game
 
 ## Basic Concept
 * A browser game, hosted on the ObieSource website
