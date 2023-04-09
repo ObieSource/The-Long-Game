@@ -1,7 +1,43 @@
-[gd_scene format=3 uid="uid://ctrudjf71v3on"]
+[gd_scene load_steps=7 format=3 uid="uid://ctrudjf71v3on"]
+
+[ext_resource type="Texture2D" uid="uid://b3122kdjx486p" path="res://assets/ikes-sprites/sprites/player-idle.png" id="1_0r4my"]
+[ext_resource type="Script" path="res://player.gd" id="1_3dkk5"]
+[ext_resource type="Texture2D" uid="uid://cgserj5uymcih" path="res://assets/ikes-sprites/sprites/player-walk1.png" id="2_kh1k7"]
+[ext_resource type="Texture2D" uid="uid://dy2fvpj5ygs6h" path="res://assets/ikes-sprites/sprites/player-walk2.png" id="3_nu260"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnedx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0r4my")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kh1k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nu260")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6q53c"]
+radius = 14.0
+height = 64.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3dkk5")
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wnedx")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6q53c")
