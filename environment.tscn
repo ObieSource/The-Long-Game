@@ -539,7 +539,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_ec4e2"]
 tile_size = Vector2i(32, 32)
 terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Grass"
+terrain_set_0/terrain_0/name = "Gras"
 terrain_set_0/terrain_0/color = Color(0, 0.309804, 0.121569, 1)
 terrain_set_0/terrain_1/name = "Waer"
 terrain_set_0/terrain_1/color = Color(0, 0.403922, 0.682353, 1)
