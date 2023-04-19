@@ -1,18 +1,21 @@
 extends CharacterBody2D
 
+#0 = front, 1 = right, 2 = back, 3 = left
+var direction = 0
+var idle = ["front-idle","side-idle","back-idle","side-idle"]
+var walk = ["front-walk","side-walk","back-walk","side-walk"]
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 75.0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionX = Input.get_axis("ui_left", "ui_right")
 	var directionY = Input.get_axis("ui_up", "ui_down")
-	
+		
 	if directionX:
 		velocity.x = directionX * SPEED
-		$Sprite2D.play("walk")
+		direction = 2 + directionX
 		if (directionX < 0) :
 			$Sprite2D.flip_h = true
 		else:
@@ -22,12 +25,14 @@ func _physics_process(delta):
 		
 	if directionY:
 		velocity.y = directionY * SPEED
-		$Sprite2D.play("walk")
+		direction = 1 - directionY
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
-	if !directionX && !directionY:
-		$Sprite2D.play("idle")
+	if directionX || directionY:
+		$Sprite2D.play(walk[direction])
+	else:
+		$Sprite2D.play(idle[direction])
 
 	move_and_slide()
 
