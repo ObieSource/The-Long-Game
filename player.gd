@@ -16,7 +16,6 @@ func _physics_process(delta):
 	if directionX:
 		velocity.x = directionX * SPEED
 		direction = 2 + directionX
-		$Sprite2D.play(walk[direction])
 		if (directionX < 0) :
 			$Sprite2D.flip_h = true
 		else:
@@ -27,11 +26,12 @@ func _physics_process(delta):
 	if directionY:
 		velocity.y = directionY * SPEED
 		direction = 1 - directionY
-		$Sprite2D.play(walk[direction])
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
-	if !directionX && !directionY:
+	if directionX || directionY:
+		$Sprite2D.play(walk[direction])
+	else:
 		$Sprite2D.play(idle[direction])
 
 	move_and_slide()
