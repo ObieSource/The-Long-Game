@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1w07xskik011"]
+[gd_scene load_steps=13 format=3 uid="uid://c1w07xskik011"]
 
 [ext_resource type="Texture2D" uid="uid://f6havxlgv2c" path="res://assets/ikes-sprites/tiles/gras.png" id="1_dtmuj"]
+[ext_resource type="Script" path="res://environment.gd" id="1_hiyqm"]
 [ext_resource type="Texture2D" uid="uid://ttijjv7q2yk1" path="res://assets/ikes-sprites/tiles/waer.png" id="2_plnlp"]
 [ext_resource type="Texture2D" uid="uid://dkq27jbpfyqcy" path="res://assets/ikes-sprites/tiles/waer_tileset.png" id="3_smqvf"]
 [ext_resource type="Texture2D" uid="uid://bd44wa3qf8oto" path="res://assets/ikes-sprites/sprites/rocks.png" id="4_wqvht"]
@@ -693,6 +694,7 @@ sources/3 = SubResource("TileSetAtlasSource_jo7y6")
 sources/4 = SubResource("TileSetAtlasSource_jjf5a")
 
 [node name="Environment" type="Node2D"]
+script = ExtResource("1_hiyqm")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
