@@ -105,5 +105,5 @@ At this point, you can submit a pull request from your fork.
 
 Now that you've run `git subtree add` once, you shouldn't have to run it again. If you ever make new changes to your assets folder, you should commit and push those changes to your asset repository. Then in The Long Game, run
 ```
-git subtree pull --prefix assets/[my-name]s-sprites [my-name]s-sprites main --squash
+git subtree pull --prefix assets/[my-name]s-sprites [your asset repo address] main --squash
 ```
