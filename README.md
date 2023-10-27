@@ -1,5 +1,9 @@
 # Contribution Guide
 
+Inspired by <https://xkcd.com/2061/>:
+
+![xkcd 2061](https://imgs.xkcd.com/comics/tectonics_game_2x.png)
+
 ## Setting Up Development Environment
 
 ### Create Local and Fork Repositories
